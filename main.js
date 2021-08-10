@@ -1,13 +1,21 @@
 var app = new Vue({
     el: '#app',
     data: {
-        counter: 0
+        counter: 0,
+        classCounter: ""
     },
     methods: {
-        counterNext() {
+        counterAdd() {
             this.counter = this.counter + 1
-            // const temp = this.counter + 1
-            // this.counter = temp
+            if(this.counter > 0) {
+                this.classCounter = "counter-green"
+            }
+        },
+        counterInc() {
+            this.counter = this.counter - 1
+            if(this.counter < 0) {
+                this.classCounter = "counter-red"
+            }
         }
     }
 })
